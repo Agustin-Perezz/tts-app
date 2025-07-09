@@ -54,6 +54,7 @@
     ]
   },
   "dependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.5.0",
     "firebase": "^11.9.1"
   }
 }
