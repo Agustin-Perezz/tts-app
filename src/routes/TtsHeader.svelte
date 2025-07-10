@@ -1,4 +1,4 @@
-<div class="mt-28 text-center">
+<div class="mt-8 text-center">
   <h1 class="font-marker mb-3 text-5xl text-gray-700">
     Minimal Text to Speech
   </h1>

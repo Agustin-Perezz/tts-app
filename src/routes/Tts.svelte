@@ -1,6 +1,7 @@
 <script lang="ts">
   import { ttsStore } from '$lib/stores/tts';
   import TtsHeader from './TtsHeader.svelte';
+  import AudioWaveform from '$lib/components/AudioWaveform.svelte';
 
   let text = $state('');
 
@@ -45,11 +46,8 @@
   {/if}
 
   {#if $ttsStore.audioUrl}
-    <div class="mx-auto w-full max-w-md">
-      <audio controls class="w-full">
-        <source src={$ttsStore.audioUrl} type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+    <div class="mx-auto max-w-md">
+      <AudioWaveform audioUrl={$ttsStore.audioUrl} />
     </div>
   {/if}
 </div>
