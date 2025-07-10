@@ -1,3 +1,9 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@theme {
+  --font-marker: 'Permanent Marker', 'cursive';
+  --font-nothing: 'Nothing You Could Do', 'cursive';
+  --font-lexend: 'Lexend Deca', 'sans-serif';
+}
