@@ -15,7 +15,7 @@ function createTTSStore() {
 
   return {
     subscribe,
-    convertToSpeech: async (text: string) => {
+    convertToSpeech: async (text: string, voiceId: string) => {
       if (!text.trim()) {
         update((state) => ({
           ...state,
@@ -32,7 +32,7 @@ function createTTSStore() {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ text })
+          body: JSON.stringify({ text, voiceId })
         });
 
         if (!response.ok) {
@@ -54,6 +54,7 @@ function createTTSStore() {
         }));
       }
     },
+    // select voice id works ?
     reset: () => {
       set({ audioUrl: '', isLoading: false, error: '' });
     }

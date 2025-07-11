@@ -5,9 +5,14 @@
   import VoicesList from './VoicesList.svelte';
 
   let text = $state('');
+  let voiceId = $state('YXpFCvM1S3JbWEJhoskW');
+
+  function handleVoiceChange(value: string) {
+    voiceId = value;
+  }
 
   function convertToSpeech() {
-    ttsStore.convertToSpeech(text);
+    ttsStore.convertToSpeech(text, voiceId);
   }
 </script>
 
@@ -40,7 +45,7 @@
         ></path>
       </svg>
     </button>
-    <VoicesList />
+    <VoicesList {handleVoiceChange} />
   </div>
 
   {#if $ttsStore.error}
