@@ -7,7 +7,7 @@ interface TTSState {
 }
 
 function createTTSStore() {
-  const { subscribe, set, update } = writable<TTSState>({
+  const { subscribe, update } = writable<TTSState>({
     audioUrl: '',
     isLoading: false,
     error: ''
@@ -53,9 +53,6 @@ function createTTSStore() {
           isLoading: false
         }));
       }
-    },
-    reset: () => {
-      set({ audioUrl: '', isLoading: false, error: '' });
     }
   };
 }
