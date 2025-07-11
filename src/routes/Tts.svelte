@@ -49,11 +49,17 @@
   </div>
 
   {#if $ttsStore.error}
-    <div class="text-center text-red-400">{$ttsStore.error}</div>
+    <div class="mt-8 text-center text-red-400">{$ttsStore.error}</div>
   {/if}
 
-  {#if $ttsStore.audioUrl}
-    <div class="mx-auto max-w-md">
+  {#if $ttsStore.isLoading}
+    <div class="mt-8 flex h-12 items-center justify-center">
+      <div
+        class="h-8 w-8 animate-spin rounded-full border-4 border-gray-600 border-t-transparent"
+      ></div>
+    </div>
+  {:else if $ttsStore.audioUrl}
+    <div class="mx-auto mt-10 max-w-md">
       <AudioWaveform audioUrl={$ttsStore.audioUrl} />
     </div>
   {/if}
