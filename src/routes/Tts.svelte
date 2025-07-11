@@ -2,6 +2,7 @@
   import { ttsStore } from '$lib/stores/tts';
   import TtsHeader from './TtsHeader.svelte';
   import AudioWaveform from '$lib/components/AudioWaveform.svelte';
+  import VoicesList from './VoicesList.svelte';
 
   let text = $state('');
 
@@ -13,7 +14,7 @@
 <div class="w-full max-w-4xl space-y-8">
   <TtsHeader />
 
-  <div class="relative w-full">
+  <div class="relative mb-0 w-full">
     <textarea
       bind:value={text}
       class="shadow-t-lg font-lexend text-md gradient-textarea h-64 w-full resize-none rounded-md border border-b-0 border-gray-100 p-6 font-light text-gray-700 placeholder-gray-400 focus:ring-0 focus:outline-none"
@@ -39,6 +40,7 @@
         ></path>
       </svg>
     </button>
+    <VoicesList />
   </div>
 
   {#if $ttsStore.error}
