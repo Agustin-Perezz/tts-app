@@ -125,7 +125,7 @@
   }
 </script>
 
-<div class="flex h-12 w-full items-center justify-center">
+<div class="flex h-12 items-center justify-center">
   <button
     on:click={handlePlay}
     disabled={isPlaying}

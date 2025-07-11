@@ -2,9 +2,9 @@ import { json } from '@sveltejs/kit';
 import client from '$lib/elevenlabs-config';
 
 export async function POST({ request }) {
-  const { text, voice_id = 'EXAVITQu4vr4xnSDxMaL' } = await request.json();
+  const { text, voiceId = 'YXpFCvM1S3JbWEJhoskW' } = await request.json();
 
-  const response = await client.textToSpeech.convert(voice_id, {
+  const response = await client.textToSpeech.convert(voiceId, {
     text,
     outputFormat: 'mp3_44100_128',
     modelId: 'eleven_multilingual_v2'

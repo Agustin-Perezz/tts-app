@@ -2,18 +2,24 @@
   import { ttsStore } from '$lib/stores/tts';
   import TtsHeader from './TtsHeader.svelte';
   import AudioWaveform from '$lib/components/AudioWaveform.svelte';
+  import VoicesList from './VoicesList.svelte';
 
   let text = $state('');
+  let voiceId = $state('YXpFCvM1S3JbWEJhoskW');
+
+  function handleVoiceChange(value: string) {
+    voiceId = value;
+  }
 
   function convertToSpeech() {
-    ttsStore.convertToSpeech(text);
+    ttsStore.convertToSpeech(text, voiceId);
   }
 </script>
 
 <div class="w-full max-w-4xl space-y-8">
   <TtsHeader />
 
-  <div class="relative w-full">
+  <div class="relative mb-0 w-full">
     <textarea
       bind:value={text}
       class="shadow-t-lg font-lexend text-md gradient-textarea h-64 w-full resize-none rounded-md border border-b-0 border-gray-100 p-6 font-light text-gray-700 placeholder-gray-400 focus:ring-0 focus:outline-none"
@@ -39,14 +45,21 @@
         ></path>
       </svg>
     </button>
+    <VoicesList {handleVoiceChange} />
   </div>
 
   {#if $ttsStore.error}
-    <div class="text-center text-red-400">{$ttsStore.error}</div>
+    <div class="mt-8 text-center text-red-400">{$ttsStore.error}</div>
   {/if}
 
-  {#if $ttsStore.audioUrl}
-    <div class="mx-auto max-w-md">
+  {#if $ttsStore.isLoading}
+    <div class="mt-8 flex h-12 items-center justify-center">
+      <div
+        class="h-8 w-8 animate-spin rounded-full border-4 border-gray-600 border-t-transparent"
+      ></div>
+    </div>
+  {:else if $ttsStore.audioUrl}
+    <div class="mx-auto mt-10 max-w-md">
       <AudioWaveform audioUrl={$ttsStore.audioUrl} />
     </div>
   {/if}
