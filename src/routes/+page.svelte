@@ -6,7 +6,7 @@
 <div class="relative min-h-screen w-full bg-[#f8fafc]">
   <Background />
   <div
-    class="relative z-10 flex min-h-screen flex-col items-center justify-center p-8 text-white"
+    class="relative z-10 flex min-h-screen flex-col items-center justify-center p-4 text-white sm:p-8"
   >
     <Tts />
   </div>
