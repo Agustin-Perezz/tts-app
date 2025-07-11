@@ -54,7 +54,6 @@ function createTTSStore() {
         }));
       }
     },
-    // select voice id works ?
     reset: () => {
       set({ audioUrl: '', isLoading: false, error: '' });
     }
