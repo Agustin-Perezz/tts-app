@@ -17,7 +17,7 @@
     },
     {
       name: 'Grandpa Spuds',
-      url: '/audio/voice_preview_grandpa spuds oxley.mp3',
+      url: '/audio/voice_preview_grandpa.mp3',
       voiceId: 'NOpBlnGInO9m6vDvFkFC'
     },
     {
