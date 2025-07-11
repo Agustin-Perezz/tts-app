@@ -59,7 +59,7 @@
       ></div>
     </div>
   {:else if $ttsStore.audioUrl}
-    <div class="mx-auto mt-10 max-w-md">
+    <div class="mx-auto mt-10 w-fit">
       <AudioWaveform audioUrl={$ttsStore.audioUrl} />
     </div>
   {/if}

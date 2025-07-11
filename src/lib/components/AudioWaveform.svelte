@@ -101,7 +101,7 @@
   onMount(() => {
     if (canvas) {
       ctx = canvas.getContext('2d')!;
-      canvas.width = 256;
+      canvas.width = 140;
       canvas.height = 48;
       initAudio();
     }
@@ -125,7 +125,7 @@
   }
 </script>
 
-<div class="flex h-12 items-center justify-center">
+<div class="inline-flex items-center justify-center">
   <button
     on:click={handlePlay}
     disabled={isPlaying}
