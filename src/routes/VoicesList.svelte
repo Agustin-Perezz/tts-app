@@ -12,7 +12,7 @@
 </script>
 
 <div
-  class="absolute bottom-[-20px] left-34 z-10 flex flex-row justify-center gap-4 overflow-x-auto"
+  class="mt-4 flex w-full flex-row justify-center gap-2 overflow-x-auto px-2 sm:absolute sm:bottom-[-20px] sm:left-0 sm:z-10 sm:mt-0 sm:gap-4"
 >
   {#each voices as voice (voice.name)}
     <VoiceExample

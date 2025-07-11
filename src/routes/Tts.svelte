@@ -16,20 +16,20 @@
   }
 </script>
 
-<div class="w-full max-w-4xl space-y-8">
+<div class="w-full max-w-4xl space-y-8 px-2 sm:px-0">
   <TtsHeader />
 
   <div class="relative mb-0 w-full">
     <textarea
       bind:value={text}
-      class="shadow-t-lg font-lexend text-md gradient-textarea h-64 w-full resize-none rounded-md border border-b-0 border-gray-100 p-6 font-light text-gray-700 placeholder-gray-400 focus:ring-0 focus:outline-none"
+      class="shadow-t-lg font-lexend text-md gradient-textarea h-40 w-full resize-none rounded-md border border-b-0 border-gray-100 p-4 font-light text-gray-700 placeholder-gray-400 focus:ring-0 focus:outline-none sm:h-64 sm:p-6"
       placeholder="Enter your text here..."
     ></textarea>
     <button
       onclick={convertToSpeech}
       disabled={$ttsStore.isLoading}
       aria-label="Convert text to speech"
-      class="absolute right-4 bottom-4 rounded-full bg-gray-600 p-2 text-white transition-colors duration-200 hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-400"
+      class="absolute right-2 bottom-2 rounded-full bg-gray-600 p-2 text-white transition-colors duration-200 hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-400 sm:right-4 sm:bottom-4"
     >
       <svg
         class="h-5 w-5"
