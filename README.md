@@ -1,13 +1,23 @@
-# Svelte Template
+# TTS App
 
-Minimal SvelteKit template with Firebase, Tailwind CSS, TypeScript, Playwright, and CI/CD via GitHub Actions.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/649591c1-50b6-4599-9c38-10bf79e46409/deploy-status)](https://app.netlify.com/projects/tts-ap/deploys)
+
+A modern Text-to-Speech application built with SvelteKit that converts text to natural-sounding speech using ElevenLabs AI technology.
+
+## Features
+
+- Convert text to speech with natural AI voices
+- Multiple voice options to choose from
+- Real-time audio playback with waveform visualization
+- Modern, responsive UI with beautiful animations
+- Server-side TTS processing for better performance
 
 ## Technologies
 
 - SvelteKit
 - TypeScript
 - Tailwind CSS
-- Firebase JS SDK
+- ElevenLabs API
 - Playwright (E2E testing)
 - ESLint & Prettier
 - Husky (Git hooks)
@@ -19,6 +29,12 @@ Install dependencies:
 
 ```
 pnpm install
+```
+
+Set up your environment variables by creating a `.env` file:
+
+```
+ELEVENLABS_API_KEY=your_elevenlabs_api_key
 ```
 
 Start the development server:
@@ -60,14 +76,24 @@ pnpm run test
 
 ## Environment Variables
 
-Set the following variables in your .env file:
+Set the following variable in your `.env` file:
 
 ```
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_APP_ID=your_app_id
+ELEVENLABS_API_KEY=your_elevenlabs_api_key
 ```
+
+You can get your API key by signing up at [ElevenLabs](https://elevenlabs.io/).
+
+## How to Use
+
+1. Enter your text in the textarea
+2. Select a voice from the dropdown menu
+3. Click the convert button to generate speech
+4. Listen to the generated audio with the waveform player
+
+## Deployment
+
+The app is configured for deployment on Netlify with the `@sveltejs/adapter-netlify` adapter.
 
 ## CI/CD
 
@@ -79,7 +105,6 @@ GitHub Actions workflow runs on push to main:
 - Installs Playwright browsers
 - Runs E2E tests
 - Builds the app
-- Deploys to GitHub Pages
 
 ## Husky Git Hooks
 
