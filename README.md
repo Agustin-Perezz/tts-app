@@ -1,6 +1,6 @@
-# TTS App
+# TTS App - [![Netlify Status](https://api.netlify.com/api/v1/badges/649591c1-50b6-4599-9c38-10bf79e46409/deploy-status)](https://app.netlify.com/projects/tts-ap/deploys)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/649591c1-50b6-4599-9c38-10bf79e46409/deploy-status)](https://app.netlify.com/projects/tts-ap/deploys)
+Deploy: https://tts-ap.netlify.app
 
 A modern Text-to-Speech application built with SvelteKit that converts text to natural-sounding speech using ElevenLabs AI technology.
 
